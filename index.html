@@ -79,15 +79,23 @@
           <!-- calculated values -->
           <div class="d-flex align-items-center justify-content-center">
             <p class="input-header mb-1">Save</p>
-            <input type="text" class="form-control w-25" />
+            <input
+              id="save-percentage-input"
+              type="text"
+              class="form-control w-25"
+            />
             <p>&nbsp;&nbsp;%&nbsp;&nbsp;</p>
             <button id="save" class="btn btn-info px-3">Save</button>
           </div>
           <!-- calculated values -->
           <!-- calculated saving values -->
           <div class="text-center">
-            <h5 class="mt-4">Saveing Amount:2000</h5>
-            <h5 class="mt-3">Remaining Balance:2500</h5>
+            <h5 class="mt-4">
+              Saveing Amount: <span id="saving-amount">00</span>
+            </h5>
+            <h5 class="mt-3">
+              Remaining Balance: <span id="remaining-amount">00</span>
+            </h5>
           </div>
           <!-- calculated saving values end -->
         </div>
