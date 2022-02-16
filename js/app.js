@@ -45,6 +45,25 @@ calculateButton.addEventListener("click", function () {
   let calculateBalance = balanceCalculate(totalCosting);
 });
 
+//when save button clicked
 saveButton.addEventListener("click", function () {
-  console.log("Save Button Clicked");
+  var income = getIncome();
+  //geting saving amount want to save
+  var saveField = document.getElementById("save-percentage-input");
+  var saveingPercentage = saveField.value;
+  var saveingAmount = (income * saveingPercentage) / 100;
+  //current balance amount
+  var balanceField = document.getElementById("balance");
+  var balance = parseFloat(balanceField.innerText);
+  if (balance < saveingAmount) {
+    alert("you have not enough balance to save this amount");
+  } else {
+    var saveingAmountField = document.getElementById("saving-amount");
+    var remainingAmountField = document.getElementById("remaining-amount");
+    var balanceField = document.getElementById("balance");
+    var balance = parseFloat(balanceField.innerText);
+    var remainTotalBalance = balance - saveingAmount;
+    saveingAmountField.innerText = saveingAmount;
+    remainingAmountField.innerText = remainTotalBalance;
+  }
 });
