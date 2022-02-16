@@ -1,0 +1,21 @@
+/* utilites */
+
+body {
+  background-color: #e5e5e5;
+}
+
+/* input fileds styles  */
+.input-header {
+  font-size: 15px;
+  margin-right: 20px;
+}
+
+.btn-alignment {
+  margin-left: 200px;
+}
+
+@media only screen and (max-width: 688px) {
+  .btn-alignment {
+    margin-left: 120px;
+  }
+}
