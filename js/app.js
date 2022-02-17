@@ -2,7 +2,6 @@ let calculateButton = document.getElementById("calculate");
 let saveButton = document.getElementById("save");
 //get income input
 function getIncome() {
-  debugger;
   let incomeField = document.getElementById("income-input");
   let income = incomeField.value;
   if (parseInt(income) < 0) {
@@ -15,13 +14,12 @@ function getIncome() {
 //get expenses inputs
 
 function getIndiviualCosting(expensesArea) {
-  debugger;
   var inputCostingField = document.getElementById(expensesArea + "-cost");
   var cost = inputCostingField.value;
   if (isNaN(cost)) {
     alert("Please Enter a number in " + expensesArea);
   } else if (parseInt(cost) < 0) {
-    alert("Money Can not be negative");
+    alert("Money Can not be negative" + "(" + expensesArea + ")");
   } else {
     return parseInt(cost);
   }
