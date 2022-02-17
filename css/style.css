@@ -4,7 +4,9 @@ body {
   background-color: #e5e5e5;
 }
 
-/* input fileds styles  */
+/* title  */
+
+/* input fileds styles*/
 .input-header {
   font-size: 15px;
   margin-right: 20px;
@@ -16,6 +18,10 @@ body {
 
 .bg-input-color {
   background-color: #dcdcdc;
+}
+
+.calculate-bg-color {
+  background-color: #f8f8f8;
 }
 
 /* design for mobile version  */
