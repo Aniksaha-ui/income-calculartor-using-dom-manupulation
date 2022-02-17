@@ -3,7 +3,8 @@ let saveButton = document.getElementById("save");
 //get income input
 function getIncome() {
   let incomeField = document.getElementById("income-input");
-  let income = incomeField.value;
+  let income = incomeField.innerText;
+  console.log(income);
   return income;
 }
 
