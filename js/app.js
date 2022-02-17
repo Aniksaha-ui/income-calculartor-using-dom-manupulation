@@ -15,7 +15,7 @@ function getIndiviualCosting(expensesArea) {
   var inputCostingField = document.getElementById(expensesArea + "-cost");
   var cost = inputCostingField.value;
   if (isNaN(cost)) {
-    alert("Please Enter a number");
+    alert("Please Enter a number in " + expensesArea);
   } else if (parseInt(cost) < 0) {
     alert("Money Can not be negative");
   } else {
