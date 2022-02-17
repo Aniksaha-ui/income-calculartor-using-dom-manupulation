@@ -3,7 +3,7 @@ let saveButton = document.getElementById("save");
 //get income input
 function getIncome() {
   let incomeField = document.getElementById("income-input");
-  let income = incomeField.innerText;
+  let income = incomeField.value;
   console.log(income);
   return income;
 }
@@ -11,14 +11,15 @@ function getIncome() {
 //get expenses inputs
 
 function getIndiviualCosting(expensesArea) {
+  // debugger;
   var inputCostingField = document.getElementById(expensesArea + "-cost");
-  var cost = parseFloat(inputCostingField.value);
+  var cost = inputCostingField.value;
   if (isNaN(cost)) {
     alert("Please Enter a number");
-  } else if (cost < 0) {
+  } else if (parseInt(cost) < 0) {
     alert("Money Can not be negative");
   } else {
-    return cost;
+    return parseInt(cost);
   }
 }
 
