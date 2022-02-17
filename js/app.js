@@ -25,16 +25,20 @@ function getIndiviualCosting(expensesArea) {
 
 //calculate Balance
 function balanceCalculate(totalCosting) {
-  var income = getIncome();
-  // check is costing less than income or not and take step
-  if (income < totalCosting) {
-    alert("Have not sufficent money!");
-  } else {
-    var totalExpensesField = document.getElementById("expenses");
-    totalExpensesField.innerText = totalCosting;
-    var remainBalance = income - totalCosting;
-    var balanceField = document.getElementById("balance");
-    balanceField.innerText = remainBalance;
+  try {
+    var income = getIncome();
+    // check is costing less than income or not and take step
+    if (income < totalCosting) {
+      alert("Have not sufficent money!");
+    } else {
+      var totalExpensesField = document.getElementById("expenses");
+      totalExpensesField.innerText = totalCosting;
+      var remainBalance = income - totalCosting;
+      var balanceField = document.getElementById("balance");
+      balanceField.innerText = remainBalance;
+    }
+  } catch (error) {
+    alert(error);
   }
 }
 
@@ -50,30 +54,34 @@ calculateButton.addEventListener("click", function () {
 
 //when save button clicked
 saveButton.addEventListener("click", function () {
-  //get income
-  var income = getIncome();
-  //geting saving amount want to save
-  var saveField = document.getElementById("save-percentage-input");
-  var saveingPercentage = saveField.value;
-  if (saveingPercentage < 0) {
-    alert("Negative number is not allowed");
-  } else {
-    //calculate savings Amount
-    var saveingAmount = (income * saveingPercentage) / 100;
-    //current balance amount
-    var balanceField = document.getElementById("balance");
-    var balance = parseFloat(balanceField.innerText);
-    //check wheater balance is greater than the amount you want to save
-    if (balance < saveingAmount) {
-      alert("you have not enough balance to save this amount");
+  try {
+    //get income
+    var income = getIncome();
+    //geting saving amount want to save
+    var saveField = document.getElementById("save-percentage-input");
+    var saveingPercentage = saveField.value;
+    if (saveingPercentage < 0) {
+      alert("Negative number is not allowed");
     } else {
-      var saveingAmountField = document.getElementById("saving-amount");
-      var remainingAmountField = document.getElementById("remaining-amount");
+      //calculate savings Amount
+      var saveingAmount = (income * saveingPercentage) / 100;
+      //current balance amount
       var balanceField = document.getElementById("balance");
       var balance = parseFloat(balanceField.innerText);
-      var remainTotalBalance = balance - saveingAmount;
-      saveingAmountField.innerText = saveingAmount;
-      remainingAmountField.innerText = remainTotalBalance;
+      //check wheater balance is greater than the amount you want to save
+      if (balance < saveingAmount) {
+        alert("you have not enough balance to save this amount");
+      } else {
+        var saveingAmountField = document.getElementById("saving-amount");
+        var remainingAmountField = document.getElementById("remaining-amount");
+        var balanceField = document.getElementById("balance");
+        var balance = parseFloat(balanceField.innerText);
+        var remainTotalBalance = balance - saveingAmount;
+        saveingAmountField.innerText = saveingAmount;
+        remainingAmountField.innerText = remainTotalBalance;
+      }
     }
+  } catch (error) {
+    alert(error);
   }
 });
