@@ -2,16 +2,20 @@ let calculateButton = document.getElementById("calculate");
 let saveButton = document.getElementById("save");
 //get income input
 function getIncome() {
+  debugger;
   let incomeField = document.getElementById("income-input");
   let income = incomeField.value;
-  console.log(income);
-  return income;
+  if (parseInt(income) < 0) {
+    alert("Money can not be negative");
+  } else {
+    return income;
+  }
 }
 
 //get expenses inputs
 
 function getIndiviualCosting(expensesArea) {
-  // debugger;
+  debugger;
   var inputCostingField = document.getElementById(expensesArea + "-cost");
   var cost = inputCostingField.value;
   if (isNaN(cost)) {
@@ -25,6 +29,7 @@ function getIndiviualCosting(expensesArea) {
 
 //calculate Balance
 function balanceCalculate(totalCosting) {
+  debugger;
   try {
     var income = getIncome();
     // check is costing less than income or not and take step
@@ -44,6 +49,7 @@ function balanceCalculate(totalCosting) {
 
 //when calculate button clicked
 calculateButton.addEventListener("click", function () {
+  debugger;
   let income = getIncome();
   let foodCost = getIndiviualCosting("food");
   let rentCost = getIndiviualCosting("rent");
@@ -54,6 +60,7 @@ calculateButton.addEventListener("click", function () {
 
 //when save button clicked
 saveButton.addEventListener("click", function () {
+  debugger;
   try {
     //get income
     var income = getIncome();
